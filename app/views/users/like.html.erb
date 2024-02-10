@@ -1,0 +1,9 @@
+
+<h2>ユーザーがいいねした投稿一覧</h2>
+<% @user.liked_tweets.each do |t| %>
+  <%= image_tag t.image_url, size: "500x700" if t.image? %>
+  <%= link_to user_path(t.id) do %>
+   <%= t.user.name %>
+  <% end %>
+  <%= t.name%>
+<% end %>

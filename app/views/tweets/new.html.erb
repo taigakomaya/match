@@ -1,0 +1,44 @@
+<body class="show1">
+<header>
+<%= link_to tweets_path do %>
+ <h1 class="lady1">Lady</h1>
+<% end %>
+<ul class="gaga">
+  <% if user_signed_in? %>
+    <li><%= link_to "新規投稿へ", new_tweet_path %></li>
+    <li><%= link_to "マイページへ", user_path(current_user.id) %></li>
+    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+  <% else %>
+   <li><%= link_to "ログイン", tweets_path %></li>
+   <li><%= link_to "新規登録", new_user_registration_path %></li>
+  <% end %>
+</ul>
+  </header>
+<h1>新規投稿</h1>
+<%= form_for @tweets do |k| %>
+   <%= k.label :画像 %>
+   <%= k.file_field :image %>
+   <br>
+   <br>
+   <%= k.label :名前 %>
+   <%= k.text_field :name %>
+   <br>
+   <br>
+   <%= k.label :年齢 %>
+   <%= k.number_field :age %>
+   <br>
+   <br>
+   <%= k.label :hobby %>
+   <%= k.text_area :hobby %>
+   <br>
+   <br>
+   <%= k.label :about %>
+   <%= k.text_area :about %>
+   <br>
+   <br>
+   <%= k.label :生年月日 %>
+   <%= k.date_field :birthday %>
+
+   <%= k.submit"投稿"%>
+<% end %>
+</body>

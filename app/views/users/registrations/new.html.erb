@@ -1,0 +1,63 @@
+<header>
+<%= link_to tweets_path do %>
+ <h1 class="lady1">Lady</h1>
+<% end %>
+<ul class="gaga">
+  <% if user_signed_in? %>
+    <li><%= link_to "マイページへ", user_path(current_user.id) %></li>
+    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+  <% else %>
+   <li><%= link_to "ログイン", tweets_path %></li>
+   <li><%= link_to "新規登録", new_user_registration_path %></li>
+  <% end %>
+</ul>
+  </header>
+<body class="user">
+<h2>新規登録</h2>
+<div class="user_box2">
+<br>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+  <div class="field">
+  <%= f.label :プロフィール画像 %><br />
+  <%= f.file_field :image, autofocus: true %>
+</div>
+<br>
+  <div class="field">
+    <%= f.label :名前 %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+<br>
+  <div class="field">
+    <%= f.label :プロフィール %><br />
+    <%= f.text_area :profile, autofocus: true %>
+  </div>
+<br> 
+  <div class="field">
+    <%= f.label :メール %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+<br>
+  <div class="field">
+    <%= f.label :パスワード %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %>文字以上)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+<br>
+  <div class="field">
+    <%= f.label :パスワード確認 %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+<br>
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<br>
+<%= render "users/shared/links" %>
+<br>
+</div>
+</body>

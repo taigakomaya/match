@@ -1,0 +1,59 @@
+<body class="tweets_index">
+<header>
+<%= link_to tweets_path do %>
+ <h1 class="lady1">Lady</h1>
+<% end %>
+<ul class="gaga">
+  <% if user_signed_in? %>
+    <li><%= link_to "新規投稿へ", new_tweet_path %></li>
+    <li><%= link_to "マイページへ", user_path(current_user.id) %></li>
+    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+  <% else %>
+   <li><%= link_to "ログイン", tweets_path %></li>
+   <li><%= link_to "新規登録", new_user_registration_path %></li>
+  <% end %>
+</ul>
+  </header>
+<br>
+
+<div class="en"></div>
+<div class="en1"></div>
+<div class="en2"></div>
+<div class="en3"></div>
+<div class="uchi">
+    <% @tweets.each do |m| %>
+   <div class="img_big">
+    <div class="img_index">
+  <% if m.image.present? %>
+    <%= link_to tweet_path(m.id) do %>
+        <%= image_tag m.image_url if m.image? %>
+    <% end %>
+  <% else %>
+        <%= image_tag"7387030e5a5600726e5309496353969a_t.jpeg" %>
+  <% end %>
+    </div>
+
+<div class="en4"></div>
+<div class="en5"></div>
+<div class="en6"></div>
+<div class="en7"></div>
+       
+  <div class="index_name">
+    <%=m.name %>
+  </div>
+   </div>
+
+   
+      
+
+    <br>
+    <% if user_signed_in? && current_user.id == m.user_id %> 
+        <%= button_to "削除する", tweet_path(m.id), method: :delete %>
+    <% end %>
+    <% end %>
+
+<div class="geek">
+    <input type="button" value="添い遂げたくない" onclick="window.location.reload();" />
+</div>
+</div>
+</body>

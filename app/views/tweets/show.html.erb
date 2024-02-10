@@ -1,0 +1,101 @@
+  <body class="b">
+  <header>
+  <%= link_to tweets_path do %>
+   <h1 class="lady1">Lady</h1>
+  <% end %>
+  <ul class="gaga">
+    <% if user_signed_in? %>
+      <li><%= link_to "新規投稿へ", new_tweet_path %></li>
+      <li><%= link_to "マイページへ", user_path(current_user.id) %></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+    <% else %>
+     <li><%= link_to "ログイン", tweets_path %></li>
+     <li><%= link_to "新規登録", new_user_registration_path %></li>
+    <% end %>
+  </ul>
+    </header>
+  <br>
+<div class="red"></div>
+<div class="aiueo">
+  <div class="showshow">
+  <br>
+  <br>
+  <br>
+<div class="show_img">
+<%= link_to user_path(@tweet.id) do %>
+  <%= image_tag @tweet.image_url if @tweet.image? %>
+<% end %>
+</div>
+  <br>
+<p>名前</p>
+<div class="show_name">
+<%= link_to user_path(@tweet.id) do %>
+  <%= @tweet.name %>
+<% end %>
+</div>
+  <br>
+<p>年齢</p>
+<div class="show_age">
+  <%= @tweet.age %>
+</div>
+  <br>
+<p>趣味</p>
+<div class="show_hobby">
+  <%= @tweet.hobby %>
+</div>
+  <br>
+<p>チャームポイント</p>
+<div class="show_about">
+  <%= @tweet.about %>
+</div>
+  <br>
+  <br>
+<p>誕生日</p>
+<div class="show_birthday">
+  <%= @tweet.birthday %>
+</div>
+  <br>
+  <br>
+  <% if user_signed_in? %>
+        <% if current_user.already_liked?(@tweet) %>
+          <%= link_to tweet_like_path(@tweet), method: :delete do %>
+            <i class="far fa-heart"></i><%= @tweet.likes.count %>
+          <% end %>
+        <% else %>
+          <%= link_to tweet_likes_path(@tweet), method: :post do %>
+            <i class="far fa-heart"></i><%= @tweet.likes.count %>
+          <% end %>
+        <% end %>
+      <% else %>
+            <i class="far fa-heart"></i><%= @tweet.likes.count %>
+      <% end %>
+  </div>
+  </div>
+
+      
+  <div class="big_line">
+      <h2>いいねしたユーザー</h2>
+  </div>
+  <div class="iine2">
+      <div class="iine">
+        <div class="iine2">
+            <% @tweet.liked_users.each do |user| %>
+          <div class="a1">
+              <div class="a"> 
+              <%= link_to user_path(user.id) do %>
+                <%= image_tag user.image_url, size: "30x30" if user.image? %>
+              <% end %>
+              </div>
+              <div class="b">
+                <%= link_to user_path(user.id) do %>
+                <%= user.name%>
+                <% end %>  
+              </div>
+          </div>
+            <% end %>
+        </div>
+      </div>
+  </div>
+</body>
+
+

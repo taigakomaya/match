@@ -1,0 +1,665 @@
+// Place all the styles related to the tweets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+body.sky{
+    background-image: url("huusen.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 700px;
+    background-position: center;
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+div.animation_box {
+    padding: 10px;
+    animation: fadeIn 4s ease 1s 1 normal backwards;
+  }
+   
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  div.animation_box2 {
+    padding: 10px;
+    animation: fadeIn2 5s ease 1s 1 normal backwards;
+  }
+   
+  @keyframes fadeIn2 {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+h3.gaiyou{
+    font-size: 200%;
+    margin-top: -65px;
+    font-family: 'Libre Baskerville', serif;
+    text-shadow: 0 0 15px #FF6694;
+    
+}
+
+  h1.lady{
+    font-size: 500%;
+    color: rgba(11, 11, 11, 0.846);
+    font-family: 'Libre Baskerville', serif;
+    font-weight: bold;
+    text-shadow: 0 0 15px #FF6694;
+    
+  }
+
+  
+
+h4.gaiyou{
+    font-size: 200%;
+    font-family: 'Libre Baskerville', serif;
+    text-shadow: 0 0 15px #FF6694;
+
+}
+
+
+
+  .deai {
+    padding-top: 30px;
+    animation: fadeIn1 5s ease 1s 1 normal backwards;
+    border-radius: 50%;
+    margin-left: 35%;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: bold;
+    font-size: 30px;
+    text-shadow: 0 0 15px #FF6694;
+
+  }
+   
+  @keyframes fadeIn1 {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .deai a{
+    text-decoration: none;
+    color: black;
+  }
+
+  .deai{
+    width: 30%;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.798); 
+    transition :0.3s;
+    height: 10%;
+      
+  }
+
+  .deai:hover{
+    transform: scale(2.2);/*1.1倍に拡大します*/
+  }
+
+  header{
+    background-color: rgba(255, 253, 253, 0.726);
+    display: flex;
+    height: 100px;
+    gap: 700px;
+    
+  }
+
+  ul.gaga{
+    display: flex;
+    gap: 50px;
+    margin-top: 35px;
+    list-style: none;
+    font-family: 'Libre Baskerville', serif;
+
+    
+  }
+ ul a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    
+  }
+
+  h1.lady1{
+    font-family: 'Libre Baskerville', serif;
+    margin-top: 25px;
+    margin-left: 20px;
+    font-size: 40px;
+    text-shadow: 0 0 15px #FF6694;
+
+  }
+
+  a{
+    text-decoration: none;
+    color: black;
+  }
+
+  .img_index img{
+    height: 70vh;
+   
+
+  }
+
+  .img_index{
+    background-color: rgb(255, 254, 253);
+    height: 75vh;
+    padding-top: 40px;
+    margin-left: 70px;
+    margin-right: 70px;
+    border-radius: 10px;
+    border: solid;
+  }
+
+
+  .uchi{
+    text-align: center;
+    z-index: -10;
+
+  }
+
+  body.tweets_index{
+    background-color: antiquewhite;
+  }
+
+  body.b{
+    background-color: antiquewhite;
+    height: 1200px;
+  }
+    
+
+  .img_big{
+    background:linear-gradient(#6b4e28,#ad7a38,#6d4c20,#9c733e,#604524,#c4883a,#83612e);
+    border: 2px dashed #6b4e28; 
+    height: 90vh;
+    padding-top: 70px;
+    margin-left: 300px;
+    margin-right: 300px;
+    border-radius: 30px;
+    z-index: -10;
+   
+  }
+
+  .en{
+    background-color: red;
+    height: 20px;
+    border: solid;
+    z-index: 100;
+    border-radius: 50%;
+    width: 20px;
+    margin-left: 23%;
+    margin-top: 10px;
+    position: absolute;
+    
+  }
+  .en1{
+    background-color: red;
+    height: 20px;
+    border: solid;
+    z-index: 200;
+    border-radius: 50%;
+    width: 20px;
+    margin-left: 74%;
+    margin-top: 10px;
+    position: absolute;
+    
+  }
+  .en2{
+    background-color: red;
+    height: 20px;
+    border: solid;
+    z-index: 300;
+    border-radius: 50%;
+    width: 20px;
+    margin-left: 23%;
+    margin-top: 710px;
+    position: absolute;
+    
+  }
+  .en3{
+    background-color: red;
+    height: 20px;
+    border: solid;
+    z-index: 400;
+    border-radius: 50%;
+    width: 20px;
+    margin-left: 47%;
+    margin-left: 74%;
+    position: absolute;
+    margin-top: 710px;
+    
+  }
+
+
+  
+  .img_big img:hover{
+    transform: scale(1.1);/*1.1倍に拡大します*/
+  }
+
+
+.index_name{
+  background-color: white;
+  height: 30px;
+  margin-left: 250px;
+  margin-right: 250px;
+  padding-top: 10px;
+  z-index: -100000000;
+  margin-top: 20px;
+  border: solid;
+  font-weight: bold;
+}
+
+.en4{
+  height: 5px;
+  width: 5px;
+  background-color: gray;
+  border-radius: 50%;
+  z-index: 1000;
+  margin-left: 250px;
+  margin-top: 20px;
+  position: absolute;
+  border: solid;
+  
+}
+
+
+.en5{
+  height: 5px;
+  width: 5px;
+  background-color: gray;
+  border-radius: 50%;
+  z-index: 2000;
+  margin-left: 250px;
+  margin-top: 55px;
+  position: absolute;
+  border: solid;
+}
+
+.en6{
+  height: 5px;
+  width: 5px;
+  background-color: gray;
+  border-radius: 50%;
+  z-index: 5000;
+  margin-left: 473px;
+  margin-top: 20px;
+  position: absolute;
+  border: solid;
+}
+
+
+.en7{
+  height: 5px;
+  width: 5px;
+  background-color: gray;
+  border-radius: 50%;
+  z-index: 4000;
+  position: absolute;
+  margin-top: 55px;
+  margin-left: 473px;
+  border: solid;
+}
+
+.rara{
+  border-radius: 50%;
+}
+
+.img_show img{
+  border-radius: 50%;
+  background-position: center;
+
+}
+
+.img_show{
+  text-align: center;
+}
+
+.show{
+  text-align: center;
+  font-family: 'Libre Baskerville', serif;
+
+
+}
+
+.show_name{
+  font-size: 30px;
+
+}
+
+
+
+h1.lady1:hover{
+  transform: scale(1.1);
+}
+
+.iine{
+  overflow:scroll;
+  height: 200px;
+  width: 400px;
+  background-color: white;
+}
+
+.big_line{
+ text-align: center;
+}
+
+.iine{
+  margin-left: 35%;
+}
+
+
+
+.a img{
+  border-radius: 50%;
+  background-position: center;
+
+}
+
+.a1{
+  display: flex;
+  gap: 50px;
+  border: solid;
+  height: 30px;
+  margin-top: 2px;
+
+}
+
+.b{
+  margin-top: 10px;
+}
+
+.showshow{
+  
+  margin-left: 400px;
+  margin-right: 400px;
+  font-family: 'Libre Baskerville', serif;
+  background:linear-gradient(#6b4e28,#ad7a38,#6d4c20,#9c733e,#604524,#c4883a,#83612e);
+  z-index: -10000;
+  border: 2px dashed #6b4e28; 
+
+
+  
+  
+}
+.show_img{
+  background-color: white;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border: solid;
+  background-position: center;
+  border: solid;
+}
+
+.showshow img{
+  height: 50vh;
+  background-position: center;
+  
+
+
+}
+
+.aiueo{
+  text-align: center;
+}
+
+
+
+.show_name{
+  background-color: white;
+  margin-left: 200px;
+  margin-right: 200px;
+  font-size: 20px;
+  border: solid;
+
+}
+
+.show_age{
+  background-color: white;
+  margin-left: 200px;
+  margin-right: 200px;
+  font-size: 20px;
+  border: solid;
+
+
+}
+
+.show_hobby{
+  background-color: white;
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 20px;
+  overflow:scroll;
+  height: 200px;
+  border: solid;
+
+}
+
+.show_about{
+  background-color: white;
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 20px;
+  overflow:scroll;
+  height: 200px;
+  border: solid;
+
+}
+
+.show_birthday{
+  background-color: white;
+  margin-left: 200px;
+  margin-right: 200px;
+  font-size: 20px;
+  border: solid;
+
+}
+
+.showshow p{
+  color: white;
+  text-shadow: 0 0 15px #1d1d1d;
+
+}
+
+.red{
+    background-color: red;
+    height: 20px;
+    border: solid;
+    z-index: 10000;
+    border-radius: 50%;
+    width: 20px;
+    margin-left: 48%;
+    margin-top: 20px;
+    position: absolute;
+
+}
+
+body.user_show{
+  background-color: antiquewhite;
+}
+
+.geek input{
+  color: red;
+  height: 50px;
+  width: 200px;
+  border: solid;
+  border-radius: 20px;
+  font-family: 'Libre Baskerville', serif;
+
+}
+
+.geek input:hover{
+  transform: scale(1.1);
+
+}
+
+.show_img img:hover{
+  transform: scale(1.1);
+}
+
+.big_line{
+  font-family: 'Libre Baskerville', serif;
+
+}
+
+img{
+  border: solid;
+}
+
+.userr{
+  display: flex;
+  gap: 100px;
+  border: solid;
+  margin-left: 200px;
+  margin-right: 200px;
+  background-color: white;
+  height: 300px;
+
+}
+
+.img_show{
+  margin-left: 200px;
+
+}
+
+.userr a{
+  font-size: 20px;
+  
+}
+
+.manatee{
+  overflow:scroll;
+  height: 500px;
+  width: 100%;
+  background-color: white;
+  border: solid;
+
+}
+
+.manatee2{
+  overflow:scroll;
+  height: 500px;
+  width: 100%;
+  background-color: white;
+  border:  solid;
+}
+
+.manatee3{
+  padding:10px;
+  display: flex;
+  flex-wrap: wrap; 
+  
+}
+
+.manatee4{
+  width: 30%;
+  border: 2px dashed rgb(223, 152, 20); 
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5%;
+  background-color:  #ede7e7 ;
+  box-shadow: 0 0 0 4px rgb(223, 152, 20);
+}
+
+h2.ab{
+  text-align: center;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: bold;
+  font-size: 30px;
+  
+
+}
+
+.user_bigbox{
+  background:linear-gradient(#6b4e28,#6d4c20,#9c733e,);
+  border: solid;
+  text-align: center;
+  margin-left: 35%;
+  margin-right: 35%;
+
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px dashed #6b4e28; 
+  font-family: 'Libre Baskerville', serif;
+
+
+
+}
+
+input[type="email" i]{
+  height: 30px;
+  width: 200px;
+  border-radius: 10px;
+
+}
+
+input[type="password" i]{
+  height: 30px;
+  width: 200px;
+  border-radius: 10px;
+
+}
+
+input[type="submit" i]{
+  height: 30px;
+  width: 200px;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: 'Libre Baskerville', serif;
+
+}
+
+body.user{
+  background-color: antiquewhite;
+}
+
+body.user h2{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Libre Baskerville', serif;
+
+}
+
+.user_box2{
+  background:linear-gradient(#6b4e28,#6d4c20,#9c733e,);
+  border: solid;
+  text-align: center;
+  margin-left: 35%;
+  margin-right: 35%;
+
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px dashed #6b4e28; 
+  font-family: 'Libre Baskerville', serif;
+}
+
+
+body.chat{
+  background-color: antiquewhite;
+
+}
+

@@ -1,0 +1,46 @@
+<header>
+<%= link_to tweets_path do %>
+ <h1 class="lady1">Lady</h1>
+<% end %>
+<ul class="gaga">
+  <% if user_signed_in? %>
+    <li><%= link_to "マイページへ", user_path(current_user.id) %></li>
+    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+  <% else %>
+   <li><%= link_to "ログイン", tweets_path %></li>
+   <li><%= link_to "新規登録", new_user_registration_path %></li>
+  <% end %>
+</ul>
+  </header>
+<body class="user">
+<br>
+<h2>ログイン</h2>
+<div class="user_bigbox">
+  <br>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.label :メールアドレス %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+  <br>
+    <div class="field">
+      <%= f.label :パスワード %><br />
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+  <br>
+    <% if devise_mapping.rememberable? %>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :覚える %>
+      </div>
+    <% end %>
+  <br>
+    <div class="actions">
+      <%= f.submit "ログインする" %>
+    </div>
+  <% end %>
+  <br>
+<%= render "users/shared/links" %>
+  <br>
+</div>
+</body>

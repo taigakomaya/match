@@ -1,0 +1,99 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.user_image { 
+    border-radius: 300px;
+    
+  
+  }
+  
+  .dm{
+    text-align: center;
+  }
+  
+ 
+  
+  .users_image {
+    display: flex;
+    gap: 500px;
+    text-align: center;
+    justify-content: center;
+    border-bottom:dashed 5px;
+    padding-bottom: 20px ;
+    color: rgb(223, 152, 20);
+  }
+  
+  .dm_container{
+    border:dashed 5px;
+    border-color:rgb(223, 152, 20);
+    background-color: rgba(255, 255, 255, 0.65);
+    margin: 0 5%;
+    margin-top:10px;
+  }
+  
+  .balloon{
+    position: relative;
+    padding: 20px;
+    background-color: #fff3ad ;
+    margin: 10px 50% 0 30px;
+    border-radius: 20px;
+    
+  }
+  
+  .balloon::before{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    left: -15px;
+    top: 20px;
+    border-right: 15px solid #fff3ad;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+  }
+  
+  .balloon2{
+    position: relative;
+    padding: 20px;
+    background-color: #f7b5f3 ;
+    margin: 10px 30px 0 50% ;
+    border-radius: 20px;
+  }
+  
+  .balloon2::before{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    right: -15px;
+    top: 20px;
+    border-left: 15px solid #f7b5f3;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+  }
+  
+  .user_kensaku{
+    text-align: center;
+    margin:30px 0 ;
+    input[type="text"]{
+        width: 80%;
+        height: 50px;
+        font-size: 14px;
+        border-radius: 10px;
+        padding: 0 30px ;
+    }
+    ::placeholder{
+        padding: 5px 5px;
+    }
+  }
+  
+  .i{
+    text-align: center;
+    border:solid;
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-top: 20px;
+    background-color: white;
+  }

@@ -1,0 +1,80 @@
+<body class="chat">
+-<header>
+<%= link_to tweets_path do %>
+ <h1 class="lady1">Lady</h1>
+<% end %>
+<ul class="gaga">
+  <% if user_signed_in? %>
+    <li><%= link_to "新規投稿へ", new_tweet_path %></li>
+    <li><%= link_to "マイページへ", user_path(current_user.id) %></li>
+    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+  <% else %>
+   <li><%= link_to "ログイン", tweets_path %></li>
+   <li><%= link_to "新規登録", new_user_registration_path %></li>
+  <% end %>
+</ul>
+  </header>
+  <div class="dm_container"> 
+  <div class="dm">
+    
+    <h1>DM</h1>
+    </div> 
+
+    <div class="users_image">
+      <% if @entries[0].user == current_user %>
+        <% @entries.each do |e| %>
+          <div class="user"> 
+          <% if e.user.image.present? %>
+            <%= image_tag e.user.image_url, size: "100x100", class: "user_image" if e.user.image? %>
+          <% else %>
+            <%= image_tag"7387030e5a5600726e5309496353969a_t.jpeg", size: "100x100", class: "user_image" %>
+          <% end %>
+            <h5><strong><a href="/users/<%= e.user.id %>"><%= e.user.name%>さん</a></strong></h5>
+          </div>
+        <% end %>
+      <% else %>
+        <% @entries.reverse_each do |e| %>
+          <div class="user"> 
+          <% if e.user.image.present? %>
+            <%= image_tag e.user.image_url, size: "100x100", class: "user_image" if e.user.image? %>
+          <% else %>
+            <%= image_tag"7387030e5a5600726e5309496353969a_t.jpeg", size: "100x100", class: "user_image" %>
+          <% end %>
+            <h5><strong><a href="/users/<%= e.user.id %>"><%= e.user.name%>さん</a></strong></h5>
+          </div>
+        <% end %>
+      <% end %>
+
+    </div>
+    
+      <% if @messages.present? %>
+        <% @messages.each do |m| %>
+          <% if m.user == current_user %>
+            <div class="balloon">
+              <strong><%= m.body %></strong>
+            </div>
+          <% else %>
+            <div class="balloon2">
+              <strong><%= m.body %></strong>
+            </div>
+          <%end%>
+        <% end %>
+      <% else %>
+        <h3 class="text-center">メッセージはまだありません</h3>
+      <% end %>
+      
+     <div class="user_kensaku"> 
+      <%= form_for @message do |f| %>
+        <%= f.text_field :body, :placeholder => "メッセージを入力して下さい" , size:"150x30" %>
+        <%= f.hidden_field :room_id, :value => @room.id %>
+        
+        <%= f.submit "投稿する" %>
+      <% end %>
+     </div>
+      
+ </div>
+</body>
+
+
+
+
