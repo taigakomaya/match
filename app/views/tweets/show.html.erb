@@ -22,14 +22,14 @@
   <br>
   <br>
 <div class="show_img">
-<%= link_to user_path(@tweet.id) do %>
+<%= link_to user_path(user.id) do %>
   <%= image_tag @tweet.image_url if @tweet.image? %>
 <% end %>
 </div>
   <br>
 <p>名前</p>
 <div class="show_name">
-<%= link_to user_path(@tweet.id) do %>
+<%= link_to user_path(user.id) do %>
   <%= @tweet.name %>
 <% end %>
 </div>

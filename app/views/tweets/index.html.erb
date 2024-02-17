@@ -24,13 +24,10 @@
     <% @tweets.each do |m| %>
    <div class="img_big">
     <div class="img_index">
-  <% if m.image.present? %>
     <%= link_to tweet_path(m.id) do %>
         <%= image_tag m.image_url if m.image? %>
     <% end %>
-  <% else %>
-        <%= image_tag"7387030e5a5600726e5309496353969a_t.jpeg" %>
-  <% end %>
+
     </div>
 
 <div class="en4"></div>
