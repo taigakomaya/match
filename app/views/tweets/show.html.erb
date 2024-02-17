@@ -22,14 +22,19 @@
   <br>
   <br>
 <div class="show_img">
-<%= link_to user_path(user.id) do %>
-  <%= image_tag @tweet.image_url if @tweet.image? %>
+<% if @tweet.user.present? %>
+  <%= link_to user_path(@tweet.user.id) do %>
+    <%= image_tag @tweet.image_url if @tweet.image? %>
+  <% end %>
+<% else %>
+  <!-- ユーザーがnilの場合の処理 -->
+  <!-- 例: "ユーザーが存在しません" と表示するなど -->
 <% end %>
 </div>
   <br>
 <p>名前</p>
 <div class="show_name">
-<%= link_to user_path(user.id) do %>
+<%= link_to user_path(@tweet.id) do %>
   <%= @tweet.name %>
 <% end %>
 </div>
